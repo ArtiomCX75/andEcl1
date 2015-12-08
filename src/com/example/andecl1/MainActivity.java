@@ -51,15 +51,22 @@ public class MainActivity extends Activity {
 
 		but3 = (Button) findViewById(R.id.button3);
 		OnClickListener lis3 = new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				j = 0;
-				//Timer tim = new Timer(199999999);
-				
+				j=7;
+				for (j = 5; j == 0; j--) {
+					text1.postDelayed(new Runnable() {
+						@Override
+						public void run() {
+							text1.setText(Integer.valueOf(j).toString());
+							//i--;
+						}
+					}, 300);
+				}
+				// Timer tim = new Timer(199999999);
 
-				
-				text2.setText("THE END");
+				//text2.setText("THE END");
 			}
 		};
 		but3.setOnClickListener(lis3);
