@@ -6,16 +6,24 @@ public class Matrix {
 
 	public static void main(String args[]) {
 		System.out.println(s);
-		/*
-		 * d = new double[3][3]; d[0][0] = 5; d[0][1] = 5; d[0][2] = 3; d[1][0]
-		 * = 3; d[1][1] = 3; d[1][2] = 7; d[2][0] = 2; d[2][1] = 3; d[2][2] = 4;
-		 */
+		
+		 d = new double[3][3]; 
+		 d[0][0] = 1; 
+		 d[0][1] = 2; 
+		 d[0][2] = 2; 
+		 d[1][0] = 1; 
+		 d[1][1] = 3; 
+		 d[1][2] = 1; 
+		 d[2][0] = 2; 
+		 d[2][1] = 3; 
+		 d[2][2] = 1;
+		
 	/*	d = new double[2][2];
 		d[0][0]=2;
 		d[0][1]=5;
 		d[1][0]=5;
 		d[1][1]=8;
-	*/	d = new double[7][7];
+	/*	d = new double[7][7];
 		d[0][0]=2;
 		d[0][1]=5;
 		d[0][2]=5;
@@ -65,7 +73,7 @@ public class Matrix {
 		d[6][4]=6;
 		d[6][5]=4;
 		d[6][6]=3;
-		
+		*/
 		
 		System.out.println(calcM(d));
 		System.exit(0);
