@@ -1,5 +1,6 @@
 package com.example.andecl1;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Menu implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener {
 	public Button btnCalc;
 	// public OnClickListener btnCalcLis;
 	// public Button btnClear;
@@ -34,53 +35,79 @@ public class MainActivity extends Menu implements OnClickListener {
 
 	public static Button btnMsize[];
 
-	@Override
+/*	@Override
 	protected void onRestart() {
-
-		if (sizeM > 0) {
-			btnMsize[sizeM].performClick();
-			MainActivity.setMatrix(tempMatrix);
-			Toast.makeText(getApplicationContext(), "read succes", Toast.LENGTH_SHORT).show();
-		} else {
-			Toast.makeText(getApplicationContext(), "can't read", Toast.LENGTH_SHORT).show();
-		}
+		
+		Toast.makeText(getApplicationContext(), "onrestart ", Toast.LENGTH_SHORT).show();
 		super.onRestart();
 
 	}
 
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onRestart();
-	}
-
-	@Override
-	protected void onPause() {
-		sizeM = 0;
 		try {
-			tempMatrix = getMatrix();
-			sizeM = tempMatrix.length;
-			Toast.makeText(getApplicationContext(), "save succes", Toast.LENGTH_SHORT).show();
+			if (readSmth("canRead") == 1) {
+				int i = (int) readSmth("size");
+				btnMsize[i].performClick();
+				for (int i1 = 0; i1 < i; i1++) {
+					for (int i2 = 0; i2 < i; i2++) {
+						tempMatrix[i1][i2]=readSmth(i1 + "" + i2);
+					}
+				}
+				
+				setMatrix(tempMatrix);
+				Toast.makeText(getApplicationContext(), "succes!!!", Toast.LENGTH_SHORT).show();
+			} else
+				Toast.makeText(getApplicationContext(), "canRead !=1", Toast.LENGTH_SHORT).show();
 		} catch (Exception e) {
 			sizeM = 0;
 			Toast.makeText(getApplicationContext(), "can't save", Toast.LENGTH_SHORT).show();
 		}
+		Toast.makeText(getApplicationContext(), "onresume", Toast.LENGTH_SHORT).show();
+		super.onResume();
+	}
+
+	@Override
+	protected void onPause() {
+		try {
+			tempMatrix = getMatrix();
+			for (int i1 = 0; i1 < tempMatrix.length; i1++) {
+				for (int i2 = 0; i2 < tempMatrix[0].length; i2++) {
+					saveSmth(i1 + "" + i2, tempMatrix[i1][i2]);
+				}
+			}
+			saveSmth("size", tempMatrix.length);
+			saveSmth("canRead", 1);
+			Toast.makeText(getApplicationContext(), "save succes", Toast.LENGTH_SHORT).show();
+		} catch (Exception e) {
+			saveSmth("canRead", 0);
+			Toast.makeText(getApplicationContext(), "can't save", Toast.LENGTH_SHORT).show();
+		}Toast.makeText(getApplicationContext(), "onpause", Toast.LENGTH_SHORT).show();
 		super.onPause();
 	}
 
 	@Override
+	protected void onDestroy() {
+		
+		Toast.makeText(getApplicationContext(), "ondestroy", Toast.LENGTH_SHORT).show();
+		super.onDestroy();
+	}
+*/
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		super.onCreate(savedInstanceState);
-
+		Intent intent1 = new Intent(this, MainActivity2.class);
+		startActivity(intent1);
 		// setContentView(R.layout.act2);
-		baseLay = new LinearLayout(this);
+		/*baseLay = new LinearLayout(this);
 		baseLay.setOrientation(LinearLayout.VERTICAL);
 		LayoutParams linLayPar = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		setContentView(baseLay, linLayPar);
 		edTxtPar = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1);
-
+		Toast.makeText(getApplicationContext(), "oncreate", Toast.LENGTH_SHORT).show();
 		addTop();
+		View exp = View.inflate(this, R.layout.mat, baseLay);*/
 
 	}
 
@@ -215,6 +242,7 @@ public class MainActivity extends Menu implements OnClickListener {
 			createLinLay(2);
 			createEditText(2);
 			addButt();
+			btnMsize[2].setEnabled(false);
 		}
 		if (v.getId() == btnMsize[3].getId()) {
 			baseLay.removeAllViews();

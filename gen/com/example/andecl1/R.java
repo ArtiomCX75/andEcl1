@@ -34,17 +34,48 @@ public final class R {
         public static final int a31=0x7f080009;
         public static final int a32=0x7f08000a;
         public static final int a33=0x7f08000b;
-        public static final int action_settings=0x7f080010;
+        public static final int action_settings=0x7f080026;
+        public static final int body=0x7f080024;
         public static final int btnCalc=0x7f08000e;
         public static final int btnClear=0x7f08000f;
+        public static final int button1=0x7f080013;
+        public static final int button2=0x7f080014;
+        public static final int button3=0x7f080015;
+        public static final int button4=0x7f080016;
+        public static final int button5=0x7f080017;
+        public static final int button6=0x7f080018;
+        public static final int editText1=0x7f08001a;
+        public static final int editText2=0x7f08001b;
+        public static final int editText3=0x7f08001c;
+        public static final int editText4=0x7f08001d;
+        public static final int editText5=0x7f08001e;
+        public static final int editText6=0x7f08001f;
+        public static final int editText7=0x7f080020;
+        public static final int editText8=0x7f080021;
+        public static final int editText9=0x7f080022;
+        public static final int footButtons=0x7f080011;
+        public static final int footer=0x7f080025;
+        public static final int headButtons=0x7f080019;
+        public static final int header=0x7f080023;
         public static final int res=0x7f08000d;
+        public static final int spinner1=0x7f080010;
         public static final int tableRow1=0x7f080000;
         public static final int tableRow2=0x7f080004;
         public static final int tableRow3=0x7f080008;
         public static final int textView1=0x7f08000c;
+        public static final int textView2=0x7f080012;
     }
     public static final class layout {
         public static final int act2=0x7f030000;
+        public static final int footer=0x7f030001;
+        public static final int header=0x7f030002;
+        public static final int m22=0x7f030003;
+        public static final int m33=0x7f030004;
+        public static final int m44=0x7f030005;
+        public static final int m55=0x7f030006;
+        public static final int m66=0x7f030007;
+        public static final int m77=0x7f030008;
+        public static final int main_empty=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f070000;

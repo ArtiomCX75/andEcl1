@@ -2,6 +2,8 @@ package com.example.andecl1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -19,8 +21,8 @@ public class Menu extends Activity {
 		menu.add("Save M2");
 		menu.add("Read M1");
 		menu.add("Read M2");
-		
-		
+		menu.add("W1");
+		menu.add("R1");
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -58,7 +60,29 @@ public class Menu extends Activity {
 				Toast.makeText(getApplicationContext(), "empty memory slot", Toast.LENGTH_LONG).show();
 			}
 		}
+		
+		if (item.getTitle() == "W1") {
+	//		saveSmth();
+		}
+		if (item.getTitle() == "R1") {
+	//		readSmth();
+		}
 		Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
 		return super.onOptionsItemSelected(item);
 	}
+
+	public <T extends Number> void saveSmth(String name, T num) {
+		
+		SharedPreferences sPref = getPreferences(MODE_PRIVATE);
+		Editor ed = sPref.edit();
+		ed.putFloat(name, num.floatValue());
+		ed.commit();
+	}
+
+	public double readSmth(String name) {
+
+		SharedPreferences sPref = getPreferences(MODE_PRIVATE);
+		return sPref.getFloat(name, 0);
+	}
+
 }
