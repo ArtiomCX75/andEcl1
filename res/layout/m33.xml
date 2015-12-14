@@ -91,11 +91,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number|numberSigned|numberDecimal"
-            android:nextFocusDown="@id/button2"
-            android:nextFocusForward="@+id/button2"
-            android:nextFocusLeft="@+id/button2"
-            android:nextFocusRight="@+id/button2"
-            android:nextFocusUp="@+id/button2" />
+            android:nextFocusDown="@id/buttonCalc"
+            android:nextFocusForward="@+id/buttonCalc"
+            android:nextFocusLeft="@+id/buttonCalc"
+            android:nextFocusRight="@+id/buttonCalc"
+            android:nextFocusUp="@+id/buttonCalc" />
 
     </LinearLayout>
 
