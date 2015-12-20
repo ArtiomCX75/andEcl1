@@ -1,5 +1,9 @@
 package com.example.andecl1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Matrix {
 	public static double d[][];
 	public static String s = "matrix has you";
@@ -165,5 +169,5 @@ public class Matrix {
 		// tempMatrix[0][1] + " " + tempMatrix[1][0] + " " + tempMatrix[1][1]);
 		System.out.println("m1 after size " + tempMatrix.length + "  " + tempMatrix[0].length);
 		return tempMatrix;
-	}
+	}	
 }
